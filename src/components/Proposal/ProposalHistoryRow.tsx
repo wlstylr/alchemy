@@ -214,7 +214,7 @@ const ConnectedProposalHistoryRow = connect(mapStateToProps)(ProposalHistoryRow)
 // In this case we wrap the Connected component because mapStateToProps requires the subscribed proposal state
 export default withSubscription({
   wrappedComponent: ConnectedProposalHistoryRow,
-  loadingComponent: (props) => <tr><td>Loading proposal {props.proposal.id.substr(0, 6)}...</td></tr>,
+  loadingComponent: (props: any) => <tr><td>Loading proposal {props.proposal.id.substr(0, 6)}...</td></tr>,
   errorComponent: (props) => <tr><td>{props.error.message}</td></tr>,
   checkForUpdate: ["currentAccountAddress"],
   createObservable: (props: IExternalProps) => {
